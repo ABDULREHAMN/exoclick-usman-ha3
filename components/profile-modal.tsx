@@ -16,11 +16,11 @@ export function ProfileModal({ isOpen, onClose }: ProfileModalProps) {
 
   const profileData = {
     fullName: "Raja Hassan",
-    email: "rajahassan23@gmail.com",
+    email: "rajahassan98072@gmail.com",
     username: "rajahassan23",
     company: "Tech Blogi",
     phone: "+923227607144",
-    website: "https://techblogi.com",
+    website: "http://cryptologi.com",
     joinDate: "12 January 2026",
     accountType: "Admin",
   }
