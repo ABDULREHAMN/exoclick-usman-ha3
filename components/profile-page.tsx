@@ -15,7 +15,7 @@ interface ProfilePageProps {
 }
 
 const ACCOUNT_STATISTICS = {
-  totalRevenue: 462.47,
+  totalRevenue: 924.35,
   totalImpressions: 173043,
   totalClicks: 4756,
 } as const
