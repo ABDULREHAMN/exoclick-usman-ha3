@@ -72,24 +72,6 @@ export function PaymentContent({ onNavigate }: PaymentContentProps) {
       status: "Pending",
       email: "abdul.rehman.soashraf@gmail.com",
     },
-    {
-      id: "wd-2",
-      date: "June 1, 2026",
-      method: "Crypto (BEP20)",
-      amount: 550.0,
-      status: "Completed",
-      email: "0xb9cE52416d589bCe1AdCd02021BAe4D14202706B",
-      completedDate: "June 9, 2026",
-    },
-    {
-      id: "wd-3",
-      date: "June 13, 2026",
-      method: "PayPal",
-      amount: 150.0,
-      status: "Completed",
-      email: "rohanjanean56@gmail.com",
-      completedDate: "June 21, 2026",
-    },
   ])
 
   const [paymentMethods, setPaymentMethods] = useState<PaymentMethodData[]>([

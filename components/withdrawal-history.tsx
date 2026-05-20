@@ -17,22 +17,6 @@ export function WithdrawalHistory() {
       isVerified: true,
     },
     {
-      date: "June 1",
-      method: "Crypto (BEP20)",
-      amount: 550.0,
-      status: "confirmed",
-      details: "0xb9cE52416d589bCe1AdCd02021BAe4D14202706B",
-      isVerified: true,
-    },
-    {
-      date: "June 13",
-      method: "PayPal",
-      amount: 150.0,
-      status: "confirmed",
-      details: "rohanjanean56@gmail.com",
-      isVerified: true,
-    },
-    {
       date: "June 22",
       method: "Daily Earnings",
       amount: 358.33,
