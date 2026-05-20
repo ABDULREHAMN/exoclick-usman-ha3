@@ -68,9 +68,9 @@ Account Status: Verified
 PAYOUT DETAILS:
 Withdrawal Amount: ${withdrawal.amount}
 Currency: USD
-Processing Time: 8–10 business days
+Processing Time: 10–12 business days
 Processing Type: Manual Review
-Withdrawal Schedule: Withdrawals are processed twice per month only (12th and 25th)
+Withdrawal Schedule: Withdrawals are processed twice per month only (16th and 02th)
 Next Withdrawal Date: January 12, 2026
 
 TRANSACTION TIMELINE:
@@ -261,7 +261,7 @@ This invoice is digitally signed and verified.
                 </div>
                 <div>
                   <div className={`text-xs ${textSecondary} uppercase tracking-wide mb-1.5`}>Processing Time</div>
-                  <div className={`font-semibold ${textPrimary}`}>8–10 business days</div>
+                  <div className={`font-semibold ${textPrimary}`}>10–12 business days</div>
                 </div>
                 <div className="col-span-2">
                   <div className={`text-xs ${textSecondary} uppercase tracking-wide mb-1.5`}>Processing Type</div>
@@ -270,12 +270,12 @@ This invoice is digitally signed and verified.
                 <div className="col-span-2">
                   <div className={`text-xs ${textSecondary} uppercase tracking-wide mb-1.5`}>Withdrawal Schedule</div>
                   <div className={`font-semibold ${textPrimary}`}>
-                    Withdrawals are processed twice per month only. Available withdrawal dates are the 12th and 25th.
+                    Withdrawals are processed twice per month only. Available withdrawal dates are the 16th and 02th.
                   </div>
                 </div>
                 <div className="col-span-2">
                   <div className={`text-xs ${textSecondary} uppercase tracking-wide mb-1.5`}>Next Withdrawal Date</div>
-                  <div className={`font-semibold ${textPrimary}`}>January 12, 2026</div>
+                  <div className={`font-semibold ${textPrimary}`}>Not Scheduled</div>
                 </div>
               </div>
             </div>

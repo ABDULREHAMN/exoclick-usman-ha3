@@ -22,22 +22,7 @@ export default function LoginPage() {
     setError("")
     setIsLoading(true)
 
-    if (username === "rajausman002" && password === "Raja@usman07") {
-      // Check if account is approved
-      const signupData = localStorage.getItem("signupData")
-      if (signupData) {
-        const userData = JSON.parse(signupData)
-        const signupTime = userData.signupTime
-        const currentTime = Date.now()
-        const hoursPassed = (currentTime - signupTime) / (1000 * 60 * 60)
-
-        if (hoursPassed < 24) {
-          setError("Your account is under review. Please wait for approval.")
-          setIsLoading(false)
-          return
-        }
-      }
-
+    if (username === "rajahassan23" && password === "Hass@n.456") {
       // Success - redirect to dashboard
       localStorage.setItem("isLoggedIn", "true")
       localStorage.setItem("username", username)
