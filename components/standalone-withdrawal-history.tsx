@@ -13,6 +13,14 @@ export default function StandaloneWithdrawalHistory() {
 
   const withdrawals = [
     {
+      date: "16-05-2026",
+      method: "Payoneer",
+      amount: 498.21,
+      status: "confirmed",
+      details: "abdul.rehman.soashraf@gmail.com",
+      isVerified: true,
+    },
+    {
       date: "May 25",
       method: "Crypto (BEP20)",
       amount: 191.87,

@@ -9,6 +9,14 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 export function WithdrawalHistory() {
   const withdrawals = [
     {
+      date: "16-05-2026",
+      method: "Payoneer",
+      amount: 498.21,
+      status: "confirmed",
+      details: "abdul.rehman.soashraf@gmail.com",
+      isVerified: true,
+    },
+    {
       date: "June 1",
       method: "Crypto (BEP20)",
       amount: 550.0,
