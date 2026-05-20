@@ -15,9 +15,9 @@ interface ProfilePageProps {
 }
 
 const ACCOUNT_STATISTICS = {
-  totalRevenue: 0.003,
-  totalImpressions: 10,
-  totalClicks: 1,
+  totalRevenue: 1242.64,
+  totalImpressions: 173043,
+  totalClicks: 4756,
 } as const
 
 export function ProfilePage({ onBack }: ProfilePageProps) {
@@ -32,7 +32,7 @@ export function ProfilePage({ onBack }: ProfilePageProps) {
     address: "",
     bio: "",
     website: "https://techblogi.com/",
-    joinDate: "January 13, 2026",
+    joinDate: "May 5, 2026",
   })
 
   const handleSave = () => {
