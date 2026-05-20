@@ -70,7 +70,7 @@ Withdrawal Amount: ${withdrawal.amount}
 Currency: USD
 Processing Time: 10–12 business days
 Processing Type: Manual Review
-Withdrawal Schedule: Withdrawals are processed twice per month only (12th and 25th)
+Withdrawal Schedule: Withdrawals are processed twice per month only (16th and 02th)
 Next Withdrawal Date: January 12, 2026
 
 TRANSACTION TIMELINE:
@@ -270,7 +270,7 @@ This invoice is digitally signed and verified.
                 <div className="col-span-2">
                   <div className={`text-xs ${textSecondary} uppercase tracking-wide mb-1.5`}>Withdrawal Schedule</div>
                   <div className={`font-semibold ${textPrimary}`}>
-                    Withdrawals are processed twice per month only. Available withdrawal dates are the 12th and 25th.
+                    Withdrawals are processed twice per month only. Available withdrawal dates are the 16th and 02th.
                   </div>
                 </div>
                 <div className="col-span-2">
