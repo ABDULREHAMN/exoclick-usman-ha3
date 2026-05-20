@@ -82,6 +82,7 @@ export function DashboardContent({ onNavigate }: DashboardContentProps) {
   const availableBalance = 924.35
   const pendingBalance = 924.35
   const thisMonthEarnings = 924.35
+  const thisMonthForecast = 1533.33
   const totalPayments = 2100.00
   const totalEarnings = 924.35
   const nextWithdrawalDate = "May 25, 2026"
@@ -1209,10 +1210,10 @@ ${exportData.map((d) => `${d.Date} | Revenue: ${d.Revenue} | Impressions: ${d.Im
         <StatsCard title="LAST MONTH" value="$0.00" />
         <StatsCard
           title="THIS MONTH FORECAST"
-          value="$0.00"
+          value={`$${thisMonthForecast.toFixed(2)}`}
           badge={{
-            text: "0%",
-            color: "bg-gray-500",
+            text: `${Math.round((thisMonthForecast / thisMonthEarnings - 1) * 100)}%`,
+            color: "bg-green-500",
           }}
         />
         <StatsCard title="LAST 6 MONTHS" value={`$${totalEarnings.toFixed(3)}`} />
