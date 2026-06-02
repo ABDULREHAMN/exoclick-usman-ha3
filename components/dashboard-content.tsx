@@ -85,7 +85,7 @@ export function DashboardContent({ onNavigate }: DashboardContentProps) {
   const lastMonthEarnings = 1928.56
   const last6MonthsEarnings = 2006.93
   const thisMonthForecast = 1533.33
-  const totalPayments = 0.0
+  const totalPayments = 498.21
   const totalEarnings = 2006.93
   const nextWithdrawalDate = "June 02, 2026"
 
