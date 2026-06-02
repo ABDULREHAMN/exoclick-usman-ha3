@@ -79,12 +79,14 @@ export function DashboardContent({ onNavigate }: DashboardContentProps) {
     }
   }
 
-  const availableBalance = 462.47
-  const pendingBalance = 498.21
-  const thisMonthEarnings = 960.68
+  const availableBalance = 1508.72
+  const pendingBalance = 0.0
+  const thisMonthEarnings = 78.37
+  const lastMonthEarnings = 1928.56
+  const last6MonthsEarnings = 2006.93
   const thisMonthForecast = 1533.33
-  const totalPayments = 0.0
-  const totalEarnings = 960.68
+  const totalPayments = 498.21
+  const totalEarnings = 2006.93
   const nextWithdrawalDate = "June 02, 2026"
 
   const allReportData = [
@@ -639,9 +641,9 @@ export function DashboardContent({ onNavigate }: DashboardContentProps) {
   }, [filteredReportData])
 
   // Display totals - use calculated when filters are active, otherwise use fixed totals
-  const displayTotalRevenue = dashboardDateRange !== null ? calculatedTotalRevenue : 0 // Updated fixed total
-  const displayTotalClicks = dashboardDateRange !== null ? calculatedTotalClicks : 0
-  const displayTotalImpressions = dashboardDateRange !== null ? calculatedTotalImpressions : 0
+  const displayTotalRevenue = dashboardDateRange !== null ? calculatedTotalRevenue : totalEarnings
+  const displayTotalClicks = dashboardDateRange !== null ? calculatedTotalClicks : 8987
+  const displayTotalImpressions = dashboardDateRange !== null ? calculatedTotalImpressions : 287987
 
   const calculateWeekOverWeekGrowth = () => {
     const dataToCalculate = dashboardDateRange ? filteredReportData : allReportData
@@ -954,7 +956,7 @@ ${exportData.map((d) => `${d.Date} | Revenue: ${d.Revenue} | Impressions: ${d.Im
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-gray-600">This Month</span>
-                    <span className="text-xl font-bold text-green-600">${(0.003).toFixed(2)}</span>
+                    <span className="text-xl font-bold text-green-600">${totalEarnings.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-gray-600">Last Month</span>
@@ -975,11 +977,11 @@ ${exportData.map((d) => `${d.Date} | Revenue: ${d.Revenue} | Impressions: ${d.Im
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-gray-600">Total Impressions</span>
-                    <span className="text-xl font-bold text-blue-600">10</span>
+                    <span className="text-xl font-bold text-blue-600">287,987</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-gray-600">Total Clicks</span>
-                    <span className="text-lg font-semibold text-gray-700">1</span>
+                    <span className="text-lg font-semibold text-gray-700">8,987</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-gray-600">Average CTR</span>
@@ -1205,8 +1207,8 @@ ${exportData.map((d) => `${d.Date} | Revenue: ${d.Revenue} | Impressions: ${d.Im
     <div className="p-6 space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
         <StatsCard title="TODAY" value={`$${todayTotals.revenue.toFixed(2)}`} />
-        <StatsCard title="THIS MONTH" value={`$${thisMonthEarnings.toFixed(3)}`} />
-        <StatsCard title="LAST MONTH" value="$0.00" />
+        <StatsCard title="THIS MONTH" value={`$${thisMonthEarnings.toFixed(2)}`} />
+        <StatsCard title="LAST MONTH" value={`$${lastMonthEarnings.toFixed(2)}`} />
         <StatsCard
           title="THIS MONTH FORECAST"
           value={`$${thisMonthForecast.toFixed(2)}`}
