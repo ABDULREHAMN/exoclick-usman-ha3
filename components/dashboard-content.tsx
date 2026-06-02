@@ -126,6 +126,11 @@ export function DashboardContent({ onNavigate }: DashboardContentProps) {
   const todayCTR = "4.66"
   const todayECPM = "81.22"
 
+  // Last Month Stats (May 2026)
+  const lastMonthRevenue = 1928.56
+  const lastMonthImpressions = 280876
+  const lastMonthClicks = 8976
+
   const hourlyData = []
 
   const todayTotals = {
@@ -1607,6 +1612,35 @@ ${exportData.map((d) => `${d.Date} | Revenue: ${d.Revenue} | Impressions: ${d.Im
                 />
               </LineChart>
             </ResponsiveContainer>
+          </div>
+        </Card>
+      </div>
+
+      {/* Last Month Summary Stats */}
+      <div className="space-y-4">
+        <h3 className="text-lg font-medium">Last Month Stats (May 2026)</h3>
+        <Card className="p-6 bg-card text-card-foreground">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+            <div className="text-center">
+              <div className="text-sm text-gray-600 mb-2">Total Revenue</div>
+              <div className="text-lg font-semibold text-gray-400">${lastMonthRevenue.toFixed(2)}</div>
+            </div>
+            <div className="text-center">
+              <div className="text-sm text-gray-600 mb-2">Total Clicks</div>
+              <div className="text-lg font-semibold text-gray-400">{lastMonthClicks.toLocaleString()}</div>
+            </div>
+            <div className="text-center">
+              <div className="text-sm text-gray-600 mb-2">Total Impressions</div>
+              <div className="text-lg font-semibold text-gray-400">{lastMonthImpressions.toLocaleString()}</div>
+            </div>
+            <div className="text-center">
+              <div className="text-sm text-gray-600 mb-2">Avg CTR</div>
+              <div className="text-lg font-semibold text-gray-400">{((lastMonthClicks / lastMonthImpressions) * 100).toFixed(2)}%</div>
+            </div>
+            <div className="text-center">
+              <div className="text-sm text-gray-600 mb-2">Avg eCPM</div>
+              <div className="text-lg font-semibold text-gray-400">${(lastMonthRevenue / (lastMonthImpressions / 1000)).toFixed(2)}</div>
+            </div>
           </div>
         </Card>
       </div>
