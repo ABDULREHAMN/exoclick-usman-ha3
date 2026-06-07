@@ -171,6 +171,30 @@ export function DashboardContent({ onNavigate }: DashboardContentProps) {
     0.02, // 23:00
   ]
 
+  // Country distribution (geographic breakdown)
+  const countryDistribution: Record<string, number> = {
+    "United States": 0.35,
+    "United Kingdom": 0.15,
+    "Canada": 0.12,
+    "Australia": 0.10,
+    "Germany": 0.08,
+    "France": 0.07,
+    "Japan": 0.08,
+    "India": 0.05,
+  }
+
+  // Keywords list for distribution
+  const keywordsList = [
+    "advertising",
+    "marketing",
+    "digital ads",
+    "programmatic",
+    "RTB",
+    "display ads",
+    "banner ads",
+    "native ads",
+  ]
+
   // Distribute each day's data into hourly breakdown
   const distributeDataByHour = (dailyData: typeof allReportData) => {
     const hourlyData: Array<{
