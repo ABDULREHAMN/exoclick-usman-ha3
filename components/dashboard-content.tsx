@@ -81,19 +81,40 @@ export function DashboardContent({ onNavigate }: DashboardContentProps) {
 
   const availableBalance = 1508.72
   const pendingBalance = 0.0
-  const thisMonthEarnings = 78.37
+  const thisMonthEarnings = 543.12
   const lastMonthEarnings = 1928.56
-  const last6MonthsEarnings = 2006.93
+  const last6MonthsEarnings = 2471.68
   const thisMonthForecast = 1533.33
   const totalPayments = 498.21
-  const totalEarnings = 2006.93
+  const totalEarnings = 2471.68
   const nextWithdrawalDate = "June 02, 2026"
+
+  // Today's data - June 7, 2026
+  const todayRevenue = 54.33
+  const todayImpressions = 6533
+  const todayClicks = 243
+  const todayCTR = "3.72"
+  const todayECPM = "83.33"
 
   const allReportData = [
     { date: "May 20, 2026", impressions: 12321, clicks: 342, revenue: 78.22, ctr: "2.78%", ecpm: "81.22" },
     { date: "May 21, 2026", impressions: 12388, clicks: 344, revenue: 78.66, ctr: "2.78%", ecpm: "81.55" },
     { date: "May 22, 2026", impressions: 12412, clicks: 346, revenue: 79.11, ctr: "2.79%", ecpm: "81.88" },
     { date: "May 23, 2026", impressions: 12455, clicks: 348, revenue: 79.55, ctr: "2.79%", ecpm: "82.11" },
+    { date: "May 24, 2026", impressions: 12498, clicks: 350, revenue: 79.98, ctr: "2.80%", ecpm: "82.44" },
+    { date: "May 25, 2026", impressions: 12542, clicks: 352, revenue: 80.33, ctr: "2.81%", ecpm: "82.77" },
+    { date: "May 26, 2026", impressions: 12588, clicks: 354, revenue: 80.88, ctr: "2.81%", ecpm: "83.00" },
+    { date: "May 27, 2026", impressions: 12611, clicks: 356, revenue: 81.22, ctr: "2.82%", ecpm: "83.22" },
+    { date: "May 28, 2026", impressions: 12655, clicks: 359, revenue: 81.77, ctr: "2.84%", ecpm: "83.55" },
+    { date: "May 29, 2026", impressions: 12711, clicks: 362, revenue: 82.11, ctr: "2.85%", ecpm: "83.88" },
+    { date: "May 30, 2026", impressions: 12788, clicks: 365, revenue: 82.77, ctr: "2.85%", ecpm: "84.11" },
+    { date: "May 31, 2026", impressions: 12893, clicks: 367, revenue: 83.28, ctr: "2.85%", ecpm: "84.44" },
+    { date: "June 2, 2026", impressions: 12233, clicks: 341, revenue: 81.22, ctr: "2.79%", ecpm: "81.22" },
+    { date: "June 3, 2026", impressions: 12388, clicks: 344, revenue: 81.66, ctr: "2.78%", ecpm: "81.88" },
+    { date: "June 4, 2026", impressions: 12477, clicks: 347, revenue: 82.11, ctr: "2.78%", ecpm: "82.55" },
+    { date: "June 5, 2026", impressions: 12588, clicks: 350, revenue: 82.55, ctr: "2.78%", ecpm: "83.11" },
+    { date: "June 6, 2026", impressions: 12644, clicks: 352, revenue: 82.88, ctr: "2.78%", ecpm: "83.77" },
+    { date: "June 7, 2026", impressions: 12765, clicks: 354, revenue: 83.22, ctr: "2.77%", ecpm: "84.33" },
     { date: "May 24, 2026", impressions: 12498, clicks: 350, revenue: 79.98, ctr: "2.80%", ecpm: "82.44" },
     { date: "May 25, 2026", impressions: 12542, clicks: 352, revenue: 80.33, ctr: "2.81%", ecpm: "82.77" },
     { date: "May 26, 2026", impressions: 12588, clicks: 354, revenue: 80.88, ctr: "2.81%", ecpm: "83.00" },
@@ -114,50 +135,19 @@ export function DashboardContent({ onNavigate }: DashboardContentProps) {
   ]
 
   const latestActivity = {
-    date: "June 2, 2026",
-    revenue: 37.33,
-    impressions: 4532,
-    clicks: 211,
-    ctr: "4.66%",
-    ecpm: "81.22",
+    date: "June 7, 2026",
+    revenue: 54.33,
+    impressions: 6533,
+    clicks: 243,
+    ctr: "3.72%",
+    ecpm: "83.33",
   }
 
-  const todayRevenue = 37.33
-  const todayImpressions = 4532
-  const todayClicks = 211
-  const todayCTR = "4.66"
-  const todayECPM = "81.22"
-
-  const hourlyData = []
-
-  const todayTotals = {
-    impressions: 5432,
-    clicks: 154,
-    revenue: 36.33,
-  }
-
-  // This ensures all data aggregates to locked totals: $4,819.23 revenue, 32,687 clicks, 567,531 impressions
-
-  // Define country distribution percentages (must sum to 100%)
-  const countryDistribution = {
-    "United States": 0.4,
-    "United Kingdom": 0.25,
-    Canada: 0.2,
-    Others: 0.15,
-  }
-
-  // Define common keywords for traffic distribution
-  const keywordsList = [
-    "crypto news",
-    "blockchain technology",
-    "bitcoin mining",
-    "ethereum updates",
-    "nft marketplace",
-    "defi platforms",
-    "web3 development",
-    "digital education",
-    "online learning",
-    "tech tutorials",
+  const recentActivityData = [
+    { date: "June 7, 2026", impressions: 12765, clicks: 354, revenue: 83.22, ctr: "2.77%", ecpm: "84.33" },
+    { date: "June 6, 2026", impressions: 12644, clicks: 352, revenue: 82.88, ctr: "2.78%", ecpm: "83.77" },
+    { date: "June 5, 2026", impressions: 12588, clicks: 350, revenue: 82.55, ctr: "2.78%", ecpm: "83.11" },
+    { date: "June 4, 2026", impressions: 12477, clicks: 347, revenue: 82.11, ctr: "2.78%", ecpm: "82.55" },
   ]
 
   // Hour distribution curve (simulates typical daily traffic pattern)
