@@ -127,13 +127,6 @@ export function DashboardContent({ onNavigate }: DashboardContentProps) {
     { date: "June 2, 2026", impressions: 4532, clicks: 211, revenue: 37.33, ctr: "4.66%", ecpm: "81.22" },
   ]
 
-  const recentActivityData = [
-    { date: "June 2, 2026", impressions: 4532, clicks: 211, revenue: 37.33, ctr: "4.66%", ecpm: "81.22" },
-    { date: "June 1, 2026", impressions: 6987, clicks: 210, revenue: 41.04, ctr: "3.01%", ecpm: "84.87" },
-    { date: "May 31, 2026", impressions: 12893, clicks: 367, revenue: 83.28, ctr: "2.85%", ecpm: "84.44" },
-    { date: "May 30, 2026", impressions: 12788, clicks: 365, revenue: 82.77, ctr: "2.85%", ecpm: "84.11" },
-  ]
-
   const latestActivity = {
     date: "June 7, 2026",
     revenue: 54.33,
