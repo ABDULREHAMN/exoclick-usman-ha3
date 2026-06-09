@@ -9,14 +9,6 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 export function WithdrawalHistory() {
   const withdrawals = [
     {
-      date: "June 5, 2026",
-      method: "Payoneer",
-      amount: 1050.33,
-      status: "pending",
-      details: "abdul.rehman.soashraf@gmail.com",
-      isVerified: true,
-    },
-    {
       date: "May 16, 2026",
       method: "Payoneer",
       amount: 498.21,
@@ -25,11 +17,11 @@ export function WithdrawalHistory() {
       isVerified: true,
     },
     {
-      date: "June 22",
-      method: "Daily Earnings",
-      amount: 358.33,
-      status: "confirmed",
-      details: "System Generated",
+      date: "Jun 05, 2026",
+      method: "Payoneer",
+      amount: 1050.33,
+      status: "pending",
+      details: "abdul.rehman.soashraf@gmail.com",
       isVerified: true,
     },
   ]
@@ -76,7 +68,7 @@ interface WithdrawalRowProps {
   date: string
   method: string
   amount: string
-  status: "withdrawn" | "scheduled" | "failed" | "confirmed"
+  status: "withdrawn" | "scheduled" | "failed" | "confirmed" | "pending" | "completed"
   details: string
   isVerified?: boolean
 }
@@ -84,6 +76,8 @@ interface WithdrawalRowProps {
 function WithdrawalRow({ date, method, amount, status, details, isVerified }: WithdrawalRowProps) {
   const statusConfig = {
     withdrawn: { icon: Check, color: "text-green-500 bg-green-50", label: "Withdrawn" },
+    completed: { icon: CheckCircle, color: "text-amber-600 bg-amber-100", label: "Completed" },
+    pending: { icon: Clock, color: "text-amber-600 bg-amber-100", label: "Pending" },
     confirmed: { icon: CheckCircle, color: "text-green-500 bg-green-50", label: "Confirmed" },
     scheduled: { icon: Clock, color: "text-yellow-500 bg-yellow-50", label: "Pending" },
     failed: { icon: AlertTriangle, color: "text-red-500 bg-red-50", label: "Failed" },

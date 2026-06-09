@@ -69,6 +69,14 @@ export function PaymentContent({ onNavigate }: PaymentContentProps) {
       date: "May 16, 2026",
       method: "Payoneer",
       amount: 498.21,
+      status: "Completed",
+      email: "abdul.rehman.soashraf@gmail.com",
+    },
+    {
+      id: "wd-2",
+      date: "Jun 05, 2026",
+      method: "Payoneer",
+      amount: 1050.33,
       status: "Pending",
       email: "abdul.rehman.soashraf@gmail.com",
     },
@@ -145,11 +153,11 @@ export function PaymentContent({ onNavigate }: PaymentContentProps) {
   }, [withdrawalHistory])
 
   const availableBalance = 489.72
-  const pendingBalance = 0.0
+  const pendingBalance = 1050.33
   const totalEarnings = 2006.93
   const totalPayments = 498.21
   const thisMonthEarnings = 78.37
-  const nextWithdrawalDate = "June 02, 2026"
+  const nextWithdrawalDate = "June 16, 2026"
 
   const paymentEntries = []
 

@@ -80,14 +80,14 @@ export function DashboardContent({ onNavigate }: DashboardContentProps) {
   }
 
   const availableBalance = 489.72
-  const pendingBalance = 0.0
+  const pendingBalance = 1050.33
   const thisMonthEarnings = 574.45
   const lastMonthEarnings = 1928.56
   const last6MonthsEarnings = 2503.01
   const thisMonthForecast = 1533.33
   const totalPayments = 498.21
   const totalEarnings = 2503.01
-  const nextWithdrawalDate = "June 02, 2026"
+  const nextWithdrawalDate = "June 16, 2026"
 
   // Today's data - June 8, 2026
   const todayRevenue = 31.33
