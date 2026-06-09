@@ -71,7 +71,7 @@ Currency: USD
 Processing Time: 10–12 business days
 Processing Type: Manual Review
 Withdrawal Schedule: Withdrawals are processed twice per month only (16th and 02th)
-Next Withdrawal Date: January 12, 2026
+Next Withdrawal Date: June 16, 2026
 
 TRANSACTION TIMELINE:
 ✓ Withdrawal Requested - ${withdrawal.date}
