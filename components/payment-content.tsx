@@ -152,12 +152,12 @@ export function PaymentContent({ onNavigate }: PaymentContentProps) {
     return () => clearInterval(interval)
   }, [withdrawalHistory])
 
-  const availableBalance = 842.60
+  const availableBalance = 1038.59
   const pendingBalance = 1050.33
-  const thisMonthEarnings = 927.89
+  const thisMonthEarnings = 1123.88
   const lastMonthEarnings = 1928.56
-  const last6MonthsEarnings = 2856.45
-  const totalEarnings = 2856.45
+  const last6MonthsEarnings = 3052.44
+  const totalEarnings = 3052.44
   const totalPayments = 498.21
   const nextWithdrawalDate = "June 16, 2026"
 
