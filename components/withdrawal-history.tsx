@@ -24,6 +24,14 @@ export function WithdrawalHistory() {
       details: "abdul.rehman.soashraf@gmail.com",
       isVerified: true,
     },
+    {
+      date: "Jun 16, 2026",
+      method: "Payoneer",
+      amount: 1322.22,
+      status: "pending",
+      details: "abdul.rehman.soashraf@gmail.com",
+      isVerified: true,
+    },
   ]
 
   const totalWithdrawn = withdrawals.reduce((sum, withdrawal) => sum + withdrawal.amount, 0)
