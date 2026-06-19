@@ -115,12 +115,12 @@ export function PaymentContent({ onNavigate }: PaymentContentProps) {
 
   // Withdrawal status is only changed through manual action, not automatically
 
-  const availableBalance = 1942.24
+  const availableBalance = 2144.26
   const pendingBalance = 1050.33
-  const thisMonthEarnings = 1472.87
+  const thisMonthEarnings = 1674.89
   const lastMonthEarnings = 1928.56
-  const last6MonthsEarnings = 3401.43
-  const totalEarnings = 3401.43
+  const last6MonthsEarnings = 3603.45
+  const totalEarnings = 3603.45
   const totalPayments = 498.21
   const nextWithdrawalDate = "June 16, 2026"
 
