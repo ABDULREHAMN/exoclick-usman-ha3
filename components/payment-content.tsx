@@ -80,6 +80,14 @@ export function PaymentContent({ onNavigate }: PaymentContentProps) {
       status: "Pending",
       email: "abdul.rehman.soashraf@gmail.com",
     },
+    {
+      id: "wd-3",
+      date: "Jun 16, 2026",
+      method: "Payoneer",
+      amount: 1322.22,
+      status: "Pending",
+      email: "abdul.rehman.soashraf@gmail.com",
+    },
   ])
 
   const [paymentMethods, setPaymentMethods] = useState<PaymentMethodData[]>([
@@ -115,13 +123,13 @@ export function PaymentContent({ onNavigate }: PaymentContentProps) {
 
   // Withdrawal status is only changed through manual action, not automatically
 
-  const availableBalance = 2144.26
-  const pendingBalance = 1050.33
+  const availableBalance = 822.04
+  const pendingBalance = 2372.55
   const thisMonthEarnings = 1674.89
   const lastMonthEarnings = 1928.56
   const last6MonthsEarnings = 3603.45
   const totalEarnings = 3603.45
-  const totalPayments = 498.21
+  const totalPayments = 1820.43
   const nextWithdrawalDate = "June 16, 2026"
 
   const paymentEntries = []
