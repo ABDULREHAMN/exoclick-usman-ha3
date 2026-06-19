@@ -79,22 +79,22 @@ export function DashboardContent({ onNavigate }: DashboardContentProps) {
     }
   }
 
-  const availableBalance = 1942.24
+  const availableBalance = 2144.26
   const pendingBalance = 1050.33
-  const thisMonthEarnings = 1472.87
+  const thisMonthEarnings = 1674.89
   const lastMonthEarnings = 1928.56
-  const last6MonthsEarnings = 3401.43
+  const last6MonthsEarnings = 3603.45
   const thisMonthForecast = 1533.33
   const totalPayments = 498.21
-  const totalEarnings = 3401.43
+  const totalEarnings = 3603.45
   const nextWithdrawalDate = "June 16, 2026"
 
-  // Today's data - June 16, 2026
-  const todayRevenue = 31.66
-  const todayImpressions = 3217
-  const todayClicks = 195
-  const todayCTR = "6.06"
-  const todayECPM = "80.94"
+  // Today's data - June 19, 2026
+  const todayRevenue = 37.33
+  const todayImpressions = 4654
+  const todayClicks = 197
+  const todayCTR = "4.23"
+  const todayECPM = "82.87"
 
   const allReportData = [
     { date: "May 1, 2026", impressions: 11200, clicks: 312, revenue: 71.20, ctr: "2.79%", ecpm: "75.00" },
@@ -143,22 +143,25 @@ export function DashboardContent({ onNavigate }: DashboardContentProps) {
     { date: "June 14, 2026", impressions: 12342, clicks: 341, revenue: 81.07, ctr: "2.76%", ecpm: "82.65" },
     { date: "June 15, 2026", impressions: 12332, clicks: 345, revenue: 80.17, ctr: "2.80%", ecpm: "83.34" },
     { date: "June 16, 2026", impressions: 3217, clicks: 195, revenue: 31.66, ctr: "6.06%", ecpm: "80.94" },
+    { date: "June 17, 2026", impressions: 12432, clicks: 341, revenue: 82.14, ctr: "2.74%", ecpm: "82.40" },
+    { date: "June 18, 2026", impressions: 12343, clicks: 351, revenue: 82.55, ctr: "2.84%", ecpm: "81.87" },
+    { date: "June 19, 2026", impressions: 4654, clicks: 197, revenue: 37.33, ctr: "4.23%", ecpm: "82.87" },
   ]
 
   const latestActivity = {
-    date: "June 16, 2026",
-    revenue: 31.66,
-    impressions: 3217,
-    clicks: 195,
-    ctr: "6.06%",
-    ecpm: "80.94",
+    date: "June 19, 2026",
+    revenue: 37.33,
+    impressions: 4654,
+    clicks: 197,
+    ctr: "4.23%",
+    ecpm: "82.87",
   }
 
   const recentActivityData = [
+    { date: "June 19, 2026", impressions: 4654, clicks: 197, revenue: 37.33, ctr: "4.23%", ecpm: "82.87" },
+    { date: "June 18, 2026", impressions: 12343, clicks: 351, revenue: 82.55, ctr: "2.84%", ecpm: "81.87" },
+    { date: "June 17, 2026", impressions: 12432, clicks: 341, revenue: 82.14, ctr: "2.74%", ecpm: "82.40" },
     { date: "June 16, 2026", impressions: 3217, clicks: 195, revenue: 31.66, ctr: "6.06%", ecpm: "80.94" },
-    { date: "June 15, 2026", impressions: 12332, clicks: 345, revenue: 80.17, ctr: "2.80%", ecpm: "83.34" },
-    { date: "June 14, 2026", impressions: 12342, clicks: 341, revenue: 81.07, ctr: "2.76%", ecpm: "82.65" },
-    { date: "June 13, 2026", impressions: 12034, clicks: 344, revenue: 79.99, ctr: "2.86%", ecpm: "81.08" },
   ]
 
   // Hour distribution curve (simulates typical daily traffic pattern)
