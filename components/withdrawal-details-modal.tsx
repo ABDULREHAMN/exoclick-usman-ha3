@@ -76,7 +76,7 @@ Next Withdrawal Date: June 16, 2026
 TRANSACTION TIMELINE:
 ✓ Withdrawal Requested - ${withdrawal.date}
 ✓ Under Review
-${isCompleted ? "✓" : "⏱"} Sent to Payoneer
+${isCompleted || isSentToPayoneer ? "✓" : "⏱"} Sent to Payoneer
 ${isCompleted ? "✓" : "⏱"} Funds Received${isCompleted ? " - " + withdrawal.completedDate : ""}
 
 REFERENCE INFORMATION:
@@ -149,6 +149,8 @@ This invoice is digitally signed and verified.
     // fetch('/api/send-invoice-email', { method: 'POST', body: JSON.stringify(emailData) })
   }
 
+  const isSentToPayoneer = withdrawal?.date === "Jun 05, 2026"
+  
   const timelineSteps = [
     {
       step: "Withdrawal Requested",
@@ -162,7 +164,7 @@ This invoice is digitally signed and verified.
     },
     {
       step: "Sent to Payoneer",
-      status: isCompleted ? "Completed" : isPending ? "Pending" : "Completed",
+      status: isCompleted ? "Completed" : isSentToPayoneer ? "Completed" : isPending ? "Pending" : "Completed",
       date: null,
     },
     {
