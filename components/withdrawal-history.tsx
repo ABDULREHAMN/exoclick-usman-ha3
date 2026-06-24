@@ -13,7 +13,7 @@ export function WithdrawalHistory() {
       method: "Payoneer",
       amount: 498.21,
       status: "completed",
-      details: "abdul.rehman.soashraf@gmail.com",
+      details: "safdarhussainsonazir@gmail.com",
       isVerified: true,
     },
     {
@@ -21,7 +21,7 @@ export function WithdrawalHistory() {
       method: "Payoneer",
       amount: 1050.33,
       status: "pending",
-      details: "abdul.rehman.soashraf@gmail.com",
+      details: "safdarhussainsonazir@gmail.com",
       isVerified: true,
     },
     {
@@ -29,7 +29,7 @@ export function WithdrawalHistory() {
       method: "Payoneer",
       amount: 1322.22,
       status: "pending",
-      details: "abdul.rehman.soashraf@gmail.com",
+      details: "safdarhussainsonazir@gmail.com",
       isVerified: true,
     },
   ]
