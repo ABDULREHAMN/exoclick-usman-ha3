@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { useState, useMemo } from "react"
+import { useState, useMemo, useEffect } from "react"
 import {
   Eye,
   MousePointer,
@@ -37,6 +37,14 @@ import {
   ResponsiveContainer,
   Legend,
 } from "recharts"
+import {
+  getCurrentFormattedDate,
+  getLastStoredDate,
+  isNewDay,
+  createDailyPlaceholder,
+  createReportPlaceholder,
+} from "@/lib/auto-daily-placeholder"
+import { isAutoDailyEnabled } from "@/config/auto-daily.config"
 
 type DashboardView = "default" | "new" | "overview" // Added "overview" to DashboardView
 type WidgetType = "default" | "today" | "hourly"
@@ -63,6 +71,44 @@ export function DashboardContent({ onNavigate }: DashboardContentProps) {
     "United Kingdom",
     "Canada",
   ])
+
+  // Auto-daily placeholder state
+  const [autoDailyEnabled] = useState(isAutoDailyEnabled())
+  const [currentDate, setCurrentDate] = useState(getCurrentFormattedDate())
+  const [lastInitializedDate, setLastInitializedDate] = useState<string | null>(null)
+
+  // Effect: Check for new day and auto-initialize placeholder data
+  useEffect(() => {
+    if (!autoDailyEnabled) return
+
+    const today = getCurrentFormattedDate()
+    setCurrentDate(today)
+
+    // Check if this is a new day and initialize placeholder
+    if (isNewDay(lastInitializedDate, today)) {
+      const dailyPlaceholder = createDailyPlaceholder(today)
+      const reportPlaceholder = createReportPlaceholder(today)
+      setLastInitializedDate(today)
+
+      // Silently initialize - placeholders are ready for manual updates
+      console.log("[v0] Auto-daily placeholder ready for", today)
+    }
+
+    // Check for new day every minute
+    const interval = setInterval(() => {
+      const newToday = getCurrentFormattedDate()
+      setCurrentDate(newToday)
+
+      if (isNewDay(lastInitializedDate, newToday)) {
+        createDailyPlaceholder(newToday)
+        createReportPlaceholder(newToday)
+        setLastInitializedDate(newToday)
+        console.log("[v0] Auto-daily placeholder ready for", newToday)
+      }
+    }, 60000) // Check every minute
+
+    return () => clearInterval(interval)
+  }, [autoDailyEnabled, lastInitializedDate])
 
   const handleDashboardChange = (view: DashboardView) => {
     setDashboardView(view)
