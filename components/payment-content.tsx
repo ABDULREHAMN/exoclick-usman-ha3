@@ -52,7 +52,7 @@ interface PaymentContentProps {
 
 export function PaymentContent({ onNavigate }: PaymentContentProps) {
   const [withdrawAmount, setWithdrawAmount] = useState("")
-  const [paymentMethod, setPaymentMethod] = useState("payoneer")
+  const [paymentMethod, setPaymentMethod] = useState("crypto")
   const [paypalEmail, setPaypalEmail] = useState("")
   const [payoneerEmail, setPayoneerEmail] = useState("")
   const [showError, setShowError] = useState(false)
@@ -64,6 +64,14 @@ export function PaymentContent({ onNavigate }: PaymentContentProps) {
   const { kycStatus, openKycPromptModal } = useKyc()
 
   const [withdrawalHistory, setWithdrawalHistory] = useState<WithdrawalDetails[]>([
+    {
+      id: "wd-4",
+      date: "Jun 30, 2026",
+      method: "Crypto (BEP20)",
+      amount: 2372.55,
+      status: "Pending",
+      email: "0xdd12eef31367532ac6f7c9b1b1115a56cebf0964",
+    },
     {
       id: "wd-1",
       date: "May 16, 2026",
@@ -77,7 +85,7 @@ export function PaymentContent({ onNavigate }: PaymentContentProps) {
       date: "Jun 05, 2026",
       method: "Payoneer",
       amount: 1050.33,
-      status: "Pending",
+      status: "Cancelled",
       email: "safdarhussainsonazir@gmail.com",
     },
     {
@@ -85,23 +93,24 @@ export function PaymentContent({ onNavigate }: PaymentContentProps) {
       date: "Jun 16, 2026",
       method: "Payoneer",
       amount: 1322.22,
-      status: "Pending",
+      status: "Cancelled",
       email: "safdarhussainsonazir@gmail.com",
     },
   ])
 
+  // Only display Crypto (BEP20) in Payment Section - hide all other payment methods
   const [paymentMethods, setPaymentMethods] = useState<PaymentMethodData[]>([
     {
-      id: "pm-1",
-      type: "payoneer",
-      accountHolderName: "Safdar Hussain",
-      email: "safdarhussainsonazir@gmail.com",
-      country: "Pakistan",
-      currency: "USD",
+      id: "pm-2",
+      type: "crypto",
+      accountHolderName: "Wallet Address",
+      email: "0xdd12eef31367532ac6f7c9b1b1115a56cebf0964",
+      country: "Global",
+      currency: "USDT",
       status: "Active",
       isDefault: true,
       priority: 1,
-      addedDate: "Jan 15, 2026",
+      addedDate: "Jun 30, 2026",
     },
   ])
 
@@ -123,14 +132,14 @@ export function PaymentContent({ onNavigate }: PaymentContentProps) {
 
   // Withdrawal status is only changed through manual action, not automatically
 
-  const availableBalance = 1753.66
+  const availableBalance = 1867.41
   const pendingBalance = 2372.55
-  const thisMonthEarnings = 2606.51
+  const thisMonthEarnings = 2720.26
   const lastMonthEarnings = 1928.56
-  const last6MonthsEarnings = 4535.07
-  const totalEarnings = 4535.07
+  const last6MonthsEarnings = 4648.82
+  const totalEarnings = 4648.82
   const totalPayments = 1820.43
-  const nextWithdrawalDate = "June 16, 2026"
+  const nextWithdrawalDate = "July 16, 2026"
 
   const paymentEntries = []
 

@@ -60,7 +60,7 @@ INVOICE DATE: ${withdrawal.date}
 STATUS: ${withdrawal.status}
 
 BILLED TO:
-Account Holder: Safdar Hussain
+Account Holder: Raja Hassion
 Email: ${withdrawal.account}
 Payment Method: ${withdrawal.method}
 Account Status: Verified
@@ -71,29 +71,28 @@ Currency: USD
 Processing Time: 10–12 business days
 Processing Type: Manual Review
 Withdrawal Schedule: Withdrawals are processed twice per month only (16th and 02th)
-Next Withdrawal Date: June 16, 2026
+Next Withdrawal Date: July 16, 2026
 
 TRANSACTION TIMELINE:
 ✓ Withdrawal Requested - ${withdrawal.date}
 ✓ Under Review
-${isCompleted || isSentToPayoneer ? "✓" : "⏱"} Sent to Payoneer
+${isCompleted || isSentToPayoneer ? "✓" : "⏱"} Sent to Wallet
 ${isCompleted ? "✓" : "⏱"} Funds Received${isCompleted ? " - " + withdrawal.completedDate : ""}
 
 REFERENCE INFORMATION:
 Reference ID: ${withdrawal.id}
-Payment Channel: Payoneer Mass Payout
+Payment Channel: Crypto Wallet
 Internal Note: Secure publisher payout
 
 INVOICE SUMMARY:
-Gross Amount: ${withdrawal.grossAmount}
-Withholding Tax (5%): -${withdrawal.tax}
+Gross Amount: $2372.55
 Fees: $0.00
 Net Amount Paid: ${withdrawal.amount}
 
 TAX & WITHHOLDING INFORMATION:
-Withholding Tax Rate: 5%
-Tax Amount: ${withdrawal.tax}
-Description: A 5% withholding tax is deducted from this withdrawal before payout.
+Withholding Tax Rate: 0%
+Tax Amount: $0.00
+Description: No withholding tax is deducted for Crypto (BEP20) payments.
 
 NOTES:
 - This is a system-generated invoice.
@@ -128,7 +127,7 @@ This invoice is digitally signed and verified.
       from: "Publisher Payments <payments@exoclick.com>",
       body: {
         header: "Withdrawal Invoice",
-        greeting: "Hello Safdar Hussain,",
+        greeting: "Hello Raja Hassion,",
         messages: [
           "Your withdrawal has been processed successfully.",
           "Please find your invoice details attached.",
@@ -163,7 +162,7 @@ This invoice is digitally signed and verified.
       date: null,
     },
     {
-      step: "Sent to Payoneer",
+      step: "Sent to Wallet",
       status: isCompleted ? "Completed" : isSentToPayoneer ? "Completed" : isPending ? "Pending" : "Completed",
       date: null,
     },
@@ -228,7 +227,7 @@ This invoice is digitally signed and verified.
               <div className="grid grid-cols-2 gap-6">
                 <div>
                   <div className={`text-xs ${textSecondary} uppercase tracking-wide mb-1.5`}>Account Holder</div>
-                  <div className={`font-semibold ${textPrimary}`}>Safdar Hussain</div>
+                  <div className={`font-semibold ${textPrimary}`}>Raja Hassion</div>
                 </div>
                 <div>
                   <div className={`text-xs ${textSecondary} uppercase tracking-wide mb-1.5`}>Email</div>
@@ -340,7 +339,7 @@ This invoice is digitally signed and verified.
                 </div>
                 <div>
                   <div className={`text-xs ${textSecondary} uppercase tracking-wide mb-1.5`}>Payment Channel</div>
-                  <div className={`font-semibold ${textPrimary}`}>Payoneer Mass Payout</div>
+                  <div className={`font-semibold ${textPrimary}`}>Crypto Wallet</div>
                 </div>
                 <div className="col-span-2">
                   <div className={`text-xs ${textSecondary} uppercase tracking-wide mb-1.5`}>Internal Note</div>
@@ -376,11 +375,7 @@ This invoice is digitally signed and verified.
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
                   <span className={`${textSecondary} font-medium`}>Gross Amount</span>
-                  <span className={`font-semibold ${textPrimary}`}>{withdrawal.grossAmount}</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className={`${textSecondary} font-medium`}>Withholding Tax (5%)</span>
-                  <span className={`font-semibold ${textPrimary}`}>-{withdrawal.tax}</span>
+                  <span className={`font-semibold ${textPrimary}`}>$2372.55</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className={`${textSecondary} font-medium`}>Fees</span>

@@ -26,17 +26,18 @@ interface PaymentMethod {
 }
 
 export function PaymentMethods() {
+  // Only display Crypto (BEP20) payment method in Payment Methods section
   const [paymentMethods, setPaymentMethods] = useState<PaymentMethod[]>([
     {
-      id: "pm_1",
-      type: "payoneer",
-      displayName: "Payoneer",
-      details: "safdarhussainsonazir@gmail.com",
+      id: "pm_2",
+      type: "crypto",
+      displayName: "Crypto (BEP20)",
+      details: "0xdd12eef31367532ac6f7c9b1b1115a56cebf0964",
       verified: true,
       isDefault: true,
-      addedDate: "Oct 1, 2025",
-      icon: "payoneer",
-      network: "Safdar Hussain",
+      addedDate: "Jun 30, 2026",
+      icon: "crypto",
+      network: "BEP20 Network",
       status: "active",
     },
   ])

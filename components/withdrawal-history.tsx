@@ -9,6 +9,14 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 export function WithdrawalHistory() {
   const withdrawals = [
     {
+      date: "Jun 30, 2026",
+      method: "Crypto (BEP20)",
+      amount: 2372.55,
+      status: "pending",
+      details: "0xdd12eef31367532ac6f7c9b1b1115a56cebf0964",
+      isVerified: true,
+    },
+    {
       date: "May 16, 2026",
       method: "Payoneer",
       amount: 498.21,
@@ -20,7 +28,7 @@ export function WithdrawalHistory() {
       date: "Jun 05, 2026",
       method: "Payoneer",
       amount: 1050.33,
-      status: "pending",
+      status: "cancelled",
       details: "safdarhussainsonazir@gmail.com",
       isVerified: true,
     },
@@ -28,7 +36,7 @@ export function WithdrawalHistory() {
       date: "Jun 16, 2026",
       method: "Payoneer",
       amount: 1322.22,
-      status: "pending",
+      status: "cancelled",
       details: "safdarhussainsonazir@gmail.com",
       isVerified: true,
     },
@@ -110,28 +118,15 @@ function WithdrawalRow({ date, method, amount, status, details, isVerified }: Wi
       </td>
       <td className="py-3 px-4 text-sm">
         {details.startsWith("0x") ? (
+          // Hide wallet address in withdrawal history for crypto
           <div className="flex items-center space-x-2">
-            <span className="font-mono text-xs">
-              {details.slice(0, 10)}...{details.slice(-8)}
-            </span>
+            <span className="text-gray-500">Crypto Wallet</span>
             {isVerified && (
               <Badge className="bg-green-100 text-green-800 text-xs flex items-center">
                 <CheckCircle size={10} className="mr-1" />
                 Verified
               </Badge>
             )}
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => copyToClipboard(details)}>
-                    <Copy size={12} />
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Copy wallet address</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
           </div>
         ) : (
           <div className="flex items-center space-x-2">
