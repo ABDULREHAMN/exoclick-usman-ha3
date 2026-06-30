@@ -52,7 +52,7 @@ interface PaymentContentProps {
 
 export function PaymentContent({ onNavigate }: PaymentContentProps) {
   const [withdrawAmount, setWithdrawAmount] = useState("")
-  const [paymentMethod, setPaymentMethod] = useState("payoneer")
+  const [paymentMethod, setPaymentMethod] = useState("crypto")
   const [paypalEmail, setPaypalEmail] = useState("")
   const [payoneerEmail, setPayoneerEmail] = useState("")
   const [showError, setShowError] = useState(false)
@@ -99,9 +99,21 @@ export function PaymentContent({ onNavigate }: PaymentContentProps) {
       country: "Pakistan",
       currency: "USD",
       status: "Active",
+      isDefault: false,
+      priority: 2,
+      addedDate: "Jan 15, 2026",
+    },
+    {
+      id: "pm-2",
+      type: "crypto",
+      accountHolderName: "Wallet Address",
+      email: "0xdd12eef31367532ac6f7c9b1b1115a56cebf0964",
+      country: "Global",
+      currency: "USDT",
+      status: "Active",
       isDefault: true,
       priority: 1,
-      addedDate: "Jan 15, 2026",
+      addedDate: "Jun 30, 2026",
     },
   ])
 
