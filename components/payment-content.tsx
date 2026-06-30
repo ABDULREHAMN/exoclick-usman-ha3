@@ -90,19 +90,8 @@ export function PaymentContent({ onNavigate }: PaymentContentProps) {
     },
   ])
 
+  // Only display Crypto (BEP20) in Payment Section - hide all other payment methods
   const [paymentMethods, setPaymentMethods] = useState<PaymentMethodData[]>([
-    {
-      id: "pm-1",
-      type: "payoneer",
-      accountHolderName: "Safdar Hussain",
-      email: "safdarhussainsonazir@gmail.com",
-      country: "Pakistan",
-      currency: "USD",
-      status: "Active",
-      isDefault: false,
-      priority: 2,
-      addedDate: "Jan 15, 2026",
-    },
     {
       id: "pm-2",
       type: "crypto",
