@@ -89,6 +89,11 @@ Gross Amount: $2372.55
 Fees: $0.00
 Net Amount Paid: ${withdrawal.amount}
 
+TAX & WITHHOLDING INFORMATION:
+Withholding Tax Rate: 0%
+Tax Amount: $0.00
+Description: No withholding tax is deducted for Crypto (BEP20) payments.
+
 NOTES:
 - This is a system-generated invoice.
 - All payments are securely processed via Payoneer.
