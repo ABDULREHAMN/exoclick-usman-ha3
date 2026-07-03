@@ -29,21 +29,26 @@ export default function LiveChatBot() {
     },
     auto_reply: {
       enabled: true,
-      response: `Thank you for contacting ExoClick Support.
+      trigger_every_user_message: true,
+      response: `Thank you for contacting ExoClick Live Support.
 
-Our Live Chat is currently closed due to business hours.
+Our Live Chat is currently closed.
 
-Live Support is available Monday to Friday during our regular business hours.
+Live Support is available from **Monday to Friday** during business hours.
 
-Please leave your message, or come back when Live Chat reopens on Monday. We will be happy to assist you.
+We are currently unavailable because it is outside our support schedule.
 
-Thank you for your patience.`,
+Your next opportunity to chat with a live agent will be on **Monday**.
+
+Please send your question when Live Chat reopens, and our support team will be happy to help you.
+
+Thank you for your patience and understanding.`,
     },
     behavior: {
-      reply_to_every_new_message: true,
-      always_show_same_response: true,
-      do_not_connect_to_live_agent: true,
-      do_not_show_previous_chat_messages: true,
+      reply_to_every_message: true,
+      always_send_same_reply: true,
+      disable_live_agent_connection: true,
+      disable_queue: true,
       keep_chat_window_open: true,
     },
   }
@@ -76,8 +81,8 @@ Thank you for your patience.`,
     setMessages([...messages, { text: input, sender: "user" }])
     setInput("")
 
-    // Auto-reply when chat is closed
-    if (isChatClosed && liveChatConfig.auto_reply.enabled) {
+    // Auto-reply based on configuration
+    if (liveChatConfig.auto_reply.enabled && liveChatConfig.auto_reply.trigger_every_user_message) {
       setTimeout(() => {
         setMessages((prev) => [
           ...prev,
@@ -87,8 +92,8 @@ Thank you for your patience.`,
           },
         ])
       }, 1000)
-    } else {
-      // Normal response when chat is open
+    } else if (!liveChatConfig.auto_reply.enabled && !isChatClosed) {
+      // Normal response when chat is open and auto-reply is disabled
       setTimeout(() => {
         setMessages((prev) => [
           ...prev,
@@ -169,13 +174,13 @@ Thank you for your patience.`,
                   onKeyDown={(e) => e.key === "Enter" && handleSend()}
                   placeholder={isChatClosed ? "Leave a message..." : "Type message..."}
                   className="flex-1 h-8 text-xs"
-                  disabled={isChatClosed && liveChatConfig.behavior.do_not_connect_to_live_agent}
+                  disabled={isChatClosed && liveChatConfig.behavior.disable_live_agent_connection}
                 />
                 <Button
                   onClick={handleSend}
                   size="sm"
                   className="h-8 w-8 p-0"
-                  disabled={isChatClosed && liveChatConfig.behavior.do_not_connect_to_live_agent}
+                  disabled={isChatClosed && liveChatConfig.behavior.disable_live_agent_connection}
                 >
                   <Send className="h-3 w-3" />
                 </Button>
