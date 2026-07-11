@@ -12,7 +12,7 @@ export function WithdrawalHistory() {
       date: "Jun 30, 2026",
       method: "Crypto (BEP20)",
       amount: 2372.55,
-      status: "pending",
+      status: "completed",
       details: "0xdd12eef31367532ac6f7c9b1b1115a56cebf0964",
       isVerified: true,
     },
